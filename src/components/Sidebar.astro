@@ -1,0 +1,104 @@
+---
+interface Profile {
+  name: string;
+  title: string;
+  affiliation: string;
+  photo: string;
+  cv?: string;
+}
+
+interface Contact {
+  email?: string;
+  scholar?: string;
+  github?: string;
+  twitter?: string;
+  linkedin?: string;
+  lab_url?: string;
+  location?: string;
+}
+
+interface Props {
+  profile: Profile;
+  contact: Contact;
+}
+
+const { profile, contact } = Astro.props;
+---
+<aside class="w-56 flex-shrink-0">
+  <div class="sticky top-16 space-y-4">
+    <!-- Photo -->
+    <div class="text-center">
+      <img
+        src={profile.photo}
+        alt={profile.name}
+        class="w-44 h-44 rounded-full object-cover mx-auto border-4 border-gray-100 shadow"
+        onerror="this.style.display='none'"
+      />
+    </div>
+
+    <!-- Name & Title -->
+    <div class="text-center">
+      <h1 class="text-lg font-bold text-gray-900 leading-snug">{profile.name}</h1>
+      <p class="text-sm text-gray-600 mt-1">{profile.title}</p>
+      <p class="text-xs text-gray-500 mt-0.5 leading-snug">{profile.affiliation}</p>
+    </div>
+
+    <!-- CV Download -->
+    {profile.cv && (
+      <div class="text-center">
+        <a
+          href={profile.cv}
+          class="inline-block px-4 py-1.5 bg-primary text-white text-sm rounded hover:bg-accent transition-colors"
+        >
+          Download CV
+        </a>
+      </div>
+    )}
+
+    <!-- Contact Links -->
+    <div class="space-y-2 pt-1">
+      {contact.email && (
+        <a href={`mailto:${contact.email}`} class="flex items-center gap-2 text-sm text-gray-600 hover:text-primary transition-colors">
+          <span class="i-ph-envelope w-4 h-4 flex-shrink-0"></span>
+          <span class="truncate text-xs">{contact.email}</span>
+        </a>
+      )}
+      {contact.scholar && (
+        <a href={contact.scholar} target="_blank" rel="noopener" class="flex items-center gap-2 text-sm text-gray-600 hover:text-primary transition-colors">
+          <span class="i-ph-graduation-cap w-4 h-4 flex-shrink-0"></span>
+          <span class="text-sm">Google Scholar</span>
+        </a>
+      )}
+      {contact.github && (
+        <a href={contact.github} target="_blank" rel="noopener" class="flex items-center gap-2 text-sm text-gray-600 hover:text-primary transition-colors">
+          <span class="i-ph-github-logo w-4 h-4 flex-shrink-0"></span>
+          <span class="text-sm">GitHub</span>
+        </a>
+      )}
+      {contact.twitter && (
+        <a href={contact.twitter} target="_blank" rel="noopener" class="flex items-center gap-2 text-sm text-gray-600 hover:text-primary transition-colors">
+          <span class="i-ph-twitter-logo w-4 h-4 flex-shrink-0"></span>
+          <span class="text-sm">Twitter / X</span>
+        </a>
+      )}
+      {contact.linkedin && (
+        <a href={contact.linkedin} target="_blank" rel="noopener" class="flex items-center gap-2 text-sm text-gray-600 hover:text-primary transition-colors">
+          <span class="i-ph-linkedin-logo w-4 h-4 flex-shrink-0"></span>
+          <span class="text-sm">LinkedIn</span>
+        </a>
+      )}
+      {contact.lab_url && (
+        <a href={contact.lab_url} target="_blank" rel="noopener" class="flex items-center gap-2 text-sm text-gray-600 hover:text-primary transition-colors">
+          <span class="i-ph-flask w-4 h-4 flex-shrink-0"></span>
+          <span class="text-sm">Research Group</span>
+        </a>
+      )}
+      {contact.location && (
+        <div class="flex items-start gap-2 text-gray-500 pt-1">
+          <span class="i-ph-map-pin w-4 h-4 flex-shrink-0 mt-0.5"></span>
+          <span class="text-xs leading-snug">{contact.location}</span>
+        </div>
+      )}
+    </div>
+  </div>
+</aside>

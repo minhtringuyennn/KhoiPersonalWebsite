@@ -1,0 +1,28 @@
+---
+const sections = [
+  { id: "about", label: "About" },
+  { id: "news", label: "News" },
+  { id: "publications", label: "Publications" },
+  { id: "research", label: "Research" },
+  { id: "experience", label: "Experience" },
+  { id: "education", label: "Education" },
+  { id: "awards", label: "Awards" },
+  { id: "service", label: "Service" },
+];
+---
+<nav class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4">
+    <ul class="flex gap-0.5 overflow-x-auto py-2 text-sm">
+      {sections.map(s => (
+        <li>
+          <a
+            href={`#${s.id}`}
+            class="px-3 py-1.5 rounded text-gray-600 hover:text-primary hover:bg-blue-50 transition-colors whitespace-nowrap block"
+          >
+            {s.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,68 @@
+- title: "DiffGrasp: Diffusion-Based Dexterous Grasping with Language Guidance"
+  authors: "A. Chen, **J. Smith**, B. Johnson, C. Williams"
+  venue: "NeurIPS 2024"
+  year: 2024
+  links:
+    pdf: "#"
+    arxiv: "https://arxiv.org/abs/2024.00001"
+    code: "https://github.com/jsmith-ml/diffgrasp"
+    project: "#"
+
+- title: "SceneFlow: Learning Consistent 3D Scene Representations from Monocular Video"
+  authors: "**J. Smith**, D. Lee, E. Park"
+  venue: "CVPR 2024"
+  year: 2024
+  links:
+    pdf: "#"
+    arxiv: "https://arxiv.org/abs/2024.00002"
+    code: "https://github.com/jsmith-ml/sceneflow"
+
+- title: "RoboGen: Towards Unleashing Infinite Data for Automated Robot Learning via Generative Simulation"
+  authors: "Y. Wang, **J. Smith**, F. Chen, G. Kim"
+  venue: "CVPR 2024"
+  year: 2024
+  links:
+    pdf: "#"
+    arxiv: "https://arxiv.org/abs/2024.00003"
+
+- title: "NeRF-Grasp: 6-DoF Grasp Detection from Neural Radiance Fields"
+  authors: "**J. Smith**, G. Kim"
+  venue: "ICLR 2024"
+  year: 2024
+  links:
+    pdf: "#"
+    arxiv: "https://arxiv.org/abs/2023.00004"
+    code: "https://github.com/jsmith-ml/nerf-grasp"
+
+- title: "GROOT: Learning to Manipulate Deformable Objects with Generalizable Representations"
+  authors: "H. Liu, **J. Smith**, I. Martinez"
+  venue: "NeurIPS 2023"
+  year: 2023
+  links:
+    pdf: "#"
+    arxiv: "https://arxiv.org/abs/2023.00005"
+
+- title: "Perceive, Predict, and Plan: Safe Motion Planning Through Interpretable Semantic Representations"
+  authors: "**J. Smith**, J. Brown"
+  venue: "ICRA 2023"
+  year: 2023
+  links:
+    pdf: "#"
+    arxiv: "https://arxiv.org/abs/2023.00006"
+
+- title: "Neural Descriptor Fields: SE(3)-Equivariant Object Representations for Manipulation"
+  authors: "**J. Smith**, K. Park, L. Chen"
+  venue: "ICRA 2022"
+  year: 2022
+  links:
+    pdf: "#"
+    arxiv: "https://arxiv.org/abs/2022.00001"
+    code: "https://github.com/jsmith-ml/neural-descriptor-fields"
+
+- title: "3D-OES: Viewpoint-Invariant Object-Factorized Environment Simulators"
+  authors: "M. Wang, **J. Smith**, N. Li"
+  venue: "CoRL 2021"
+  year: 2021
+  links:
+    pdf: "#"
+    arxiv: "https://arxiv.org/abs/2021.00001"

@@ -1,0 +1,108 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = "Dr. Jane Smith",
+  description = "Assistant Professor at Carnegie Mellon University",
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+
+  <style is:global>
+    :root { --sw: 16rem; }
+
+    #sidebar {
+      width: var(--sw);
+      transition: width 260ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @media (min-width: 1024px) {
+      #content-wrapper {
+        margin-left: var(--sw);
+        transition: margin-left 260ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+
+    .sidebar-label {
+      max-width: 12rem;
+      opacity: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: max-width 260ms cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 180ms ease;
+    }
+    html.sb-collapsed .sidebar-label {
+      max-width: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #sidebar-photo {
+      transition: opacity 200ms ease,
+                  max-height 260ms cubic-bezier(0.4, 0, 0.2, 1),
+                  padding 260ms ease;
+      max-height: 12rem;
+      overflow: hidden;
+    }
+    html.sb-collapsed #sidebar-photo {
+      opacity: 0;
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      pointer-events: none;
+    }
+
+    #social-row {
+      transition: gap 260ms ease;
+    }
+    html.sb-collapsed #social-row {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    #theme-label {
+      transition: max-width 260ms ease, opacity 180ms ease;
+      max-width: 8rem;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    html.sb-collapsed #theme-label {
+      max-width: 0;
+      opacity: 0;
+    }
+    html.sb-collapsed #theme-btn {
+      gap: 0;
+    }
+    html.sb-collapsed #sidebar-toggle-row {
+      justify-content: center;
+    }
+  </style>
+
+  <script is:inline>
+    (function () {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+      if (localStorage.getItem('sidebarCollapsed') === 'true') {
+        document.documentElement.classList.add('sb-collapsed');
+        document.documentElement.style.setProperty('--sw', '4rem');
+      }
+    })();
+  </script>
+</head>
+
+<body class="font-sans font-medium text-base leading-relaxed bg-white text-gray-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200">
+  <div id="content-wrapper" class="pt-14 lg:pt-0 min-h-screen">
+    <slot />
+  </div>
+</body>
+</html>

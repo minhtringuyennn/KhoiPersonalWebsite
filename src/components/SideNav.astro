@@ -1,0 +1,188 @@
+---
+interface Profile { name: string; photo: string; }
+interface Contact {
+  github?: string; twitter?: string;
+  linkedin?: string; scholar?: string;
+}
+interface Props { profile: Profile; contact: Contact; }
+const { profile, contact } = Astro.props;
+
+const sections = [
+  { id: "about",        label: "About",              icon: "i-ph-user-bold" },
+  { id: "news",         label: "News",               icon: "i-ph-newspaper-bold" },
+  { id: "publications", label: "Publications",       icon: "i-ph-books-bold" },
+  { id: "research",     label: "Research",           icon: "i-ph-atom-bold" },
+  { id: "experience",   label: "Experience",         icon: "i-ph-briefcase-bold" },
+  { id: "education",    label: "Education",          icon: "i-ph-graduation-cap-bold" },
+  { id: "awards",       label: "Awards",             icon: "i-ph-trophy-bold" },
+  { id: "service",      label: "Activity & Service", icon: "i-ph-handshake-bold" },
+];
+---
+
+<div class="lg:hidden fixed top-0 left-0 right-0 z-50 h-14
+            bg-[#1e2433] dark:bg-[#0d1117] shadow
+            flex items-center justify-between px-4">
+  <a href="#about" class="text-white font-bold text-base truncate">{profile.name}</a>
+  <div class="flex items-center gap-2">
+    <button id="theme-btn-mobile" aria-label="Toggle theme"
+      class="p-2 text-slate-400 hover:text-white transition-colors rounded-md hover:bg-white/10">
+      <span id="theme-icon-mobile-sun"  class="i-ph-sun-bold  w-5 h-5 block hidden"></span>
+      <span id="theme-icon-mobile-moon" class="i-ph-moon-bold w-5 h-5 block hidden"></span>
+    </button>
+    <button id="mobile-menu-btn" aria-label="Toggle navigation"
+      class="p-2 text-slate-400 hover:text-white transition-colors rounded-md hover:bg-white/10">
+      <span class="i-ph-list-bold w-5 h-5 block"></span>
+    </button>
+  </div>
+</div>
+
+<div id="mobile-nav"
+  class="hidden lg:hidden fixed top-14 left-0 right-0 z-40
+         bg-[#1e2433] dark:bg-[#0d1117] shadow-xl border-t border-white/10">
+  <ul class="py-1">
+    {sections.map(s => (
+      <li>
+        <a href={`#${s.id}`}
+          class="mobile-nav-link flex items-center gap-3 px-5 py-3
+                 text-slate-400 hover:text-white hover:bg-white/5
+                 font-semibold text-sm transition-colors">
+          <span class={`${s.icon} w-4 h-4 flex-shrink-0`}></span>
+          {s.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<nav id="sidebar"
+  class="hidden lg:flex fixed left-0 top-0 h-screen flex-col overflow-hidden z-50
+         bg-[#1e2433] dark:bg-[#0d1117] shadow-xl transition-colors duration-200">
+
+  <div id="sidebar-toggle-row" class="flex items-center justify-end px-2 pt-2 pb-1 shrink-0">
+    <button id="sidebar-toggle" aria-label="Toggle sidebar"
+      class="flex items-center justify-center w-8 h-8 rounded-md
+             text-slate-500 hover:text-white hover:bg-white/10 transition-colors">
+      <span id="collapse-icon-left"  class="i-ph-caret-left-bold  w-4 h-4 block"></span>
+      <span id="collapse-icon-right" class="i-ph-caret-right-bold w-4 h-4 block hidden"></span>
+    </button>
+  </div>
+
+  <a id="sidebar-photo" href="#about"
+    class="block pt-4 pb-4 px-6 text-center shrink-0">
+    <img
+      src={profile.photo}
+      alt={profile.name}
+      class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white/10"
+      onerror="this.style.opacity='0.15'"
+    />
+  </a>
+
+  <ul class="flex-1 py-1 overflow-hidden">
+    {sections.map(s => (
+      <li>
+        <a href={`#${s.id}`}
+          title={s.label}
+          class="flex items-center gap-3 px-5 py-2.5
+                 text-slate-400 hover:text-white hover:bg-white/5
+                 font-semibold text-sm transition-colors">
+          <span class={`${s.icon} w-5 h-5 flex-shrink-0`}></span>
+          <span class="sidebar-label">{s.label}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <div class="px-4 py-5 border-t border-white/10 shrink-0 space-y-3">
+    <div id="social-row" class="flex flex-wrap justify-center gap-3">
+      {contact.scholar && (
+        <a href={contact.scholar} target="_blank" rel="noopener" title="Google Scholar"
+           class="text-slate-500 hover:text-white transition-colors">
+          <span class="i-ph-graduation-cap-bold w-5 h-5 block"></span>
+        </a>
+      )}
+      {contact.github && (
+        <a href={contact.github} target="_blank" rel="noopener" title="GitHub"
+           class="text-slate-500 hover:text-white transition-colors">
+          <span class="i-ph-github-logo-bold w-5 h-5 block"></span>
+        </a>
+      )}
+      {contact.twitter && (
+        <a href={contact.twitter} target="_blank" rel="noopener" title="Twitter / X"
+           class="text-slate-500 hover:text-white transition-colors">
+          <span class="i-ph-twitter-logo-bold w-5 h-5 block"></span>
+        </a>
+      )}
+      {contact.linkedin && (
+        <a href={contact.linkedin} target="_blank" rel="noopener" title="LinkedIn"
+           class="text-slate-500 hover:text-white transition-colors">
+          <span class="i-ph-linkedin-logo-bold w-5 h-5 block"></span>
+        </a>
+      )}
+    </div>
+
+    <button id="theme-btn" aria-label="Toggle light/dark mode"
+      class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg
+             bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white
+             text-xs font-bold tracking-wider uppercase transition-colors">
+      <span id="theme-icon-sun"  class="i-ph-sun-bold  w-4 h-4 flex-shrink-0 hidden"></span>
+      <span id="theme-icon-moon" class="i-ph-moon-bold w-4 h-4 flex-shrink-0 hidden"></span>
+      <span id="theme-label" class="sidebar-label">Light mode</span>
+    </button>
+  </div>
+</nav>
+
+<script>
+  const html = document.documentElement;
+  const cw   = document.getElementById('content-wrapper')!;
+
+  function applyCollapse(collapsed: boolean, animate = true) {
+    if (!animate) {
+      const sidebar = document.getElementById('sidebar')!;
+      sidebar.style.transition = 'none';
+      cw.style.transition = 'none';
+      requestAnimationFrame(() => {
+        sidebar.style.transition = '';
+        cw.style.transition = '';
+      });
+    }
+    html.classList.toggle('sb-collapsed', collapsed);
+    html.style.setProperty('--sw', collapsed ? '4rem' : '16rem');
+    document.getElementById('collapse-icon-left')!.classList.toggle('hidden', collapsed);
+    document.getElementById('collapse-icon-right')!.classList.toggle('hidden', !collapsed);
+  }
+
+  function toggleSidebar() {
+    const collapsed = !html.classList.contains('sb-collapsed');
+    applyCollapse(collapsed, true);
+    localStorage.setItem('sidebarCollapsed', String(collapsed));
+  }
+
+  document.getElementById('sidebar-toggle')?.addEventListener('click', toggleSidebar);
+  applyCollapse(localStorage.getItem('sidebarCollapsed') === 'true', false);
+
+  function syncThemeIcons() {
+    const dark = html.classList.contains('dark');
+    document.getElementById('theme-icon-sun')!.classList.toggle('hidden', dark);
+    document.getElementById('theme-icon-moon')!.classList.toggle('hidden', !dark);
+    document.getElementById('theme-label')!.textContent = dark ? 'Light mode' : 'Dark mode';
+    document.getElementById('theme-icon-mobile-sun')!.classList.toggle('hidden', dark);
+    document.getElementById('theme-icon-mobile-moon')!.classList.toggle('hidden', !dark);
+  }
+
+  function toggleTheme() {
+    const nowDark = html.classList.toggle('dark');
+    localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+    syncThemeIcons();
+  }
+
+  document.getElementById('theme-btn')?.addEventListener('click', toggleTheme);
+  document.getElementById('theme-btn-mobile')?.addEventListener('click', toggleTheme);
+  syncThemeIcons();
+
+  const menuBtn   = document.getElementById('mobile-menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  menuBtn?.addEventListener('click', () => mobileNav?.classList.toggle('hidden'));
+  document.querySelectorAll('.mobile-nav-link').forEach(link =>
+    link.addEventListener('click', () => mobileNav?.classList.add('hidden'))
+  );
+</script>

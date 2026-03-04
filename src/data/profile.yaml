@@ -1,0 +1,17 @@
+name: "Dr. Jane Smith"
+title: "Assistant Professor"
+affiliation: "School of Computer Science, Carnegie Mellon University"
+photo: "/profile.jpg"
+bio: |
+  I am an Assistant Professor in the School of Computer Science at Carnegie Mellon University.
+  My research focuses on machine learning, computer vision, and robotics. I completed my PhD
+  at Stanford University and was a postdoctoral researcher at MIT CSAIL before joining CMU.
+
+  I am broadly interested in developing intelligent systems that can perceive, reason, and
+  act in the physical world. My work combines deep learning with geometric reasoning and
+  physical simulation.
+
+  I lead the Machine Learning & Robotics Lab at CMU. My research has been supported by
+  NSF, DARPA, Amazon, and Google. I am always looking for motivated PhD students and
+  postdoctoral researchers.
+cv: "/cv.pdf"

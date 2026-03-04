@@ -1,17 +1,210 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import SideNav from '../components/SideNav.astro';
+import Section from '../components/Section.astro';
+import PubList from '../components/PubList.astro';
+import { readFileSync } from 'fs';
+import yaml from 'js-yaml';
+import { join } from 'path';
 
+const dataDir = join(process.cwd(), 'src/data');
+function loadYaml(file: string) {
+  return yaml.load(readFileSync(join(dataDir, file), 'utf-8'));
+}
+
+const profile      = loadYaml('profile.yaml') as any;
+const contact      = loadYaml('contact.yaml') as any;
+const news         = loadYaml('news.yaml') as any[];
+const publications = loadYaml('publications.yaml') as any[];
+const experience   = loadYaml('experience.yaml') as any[];
+const education    = loadYaml('education.yaml') as any[];
+const awards       = loadYaml('awards.yaml') as any[];
+const service      = loadYaml('service.yaml') as any[];
+
+const nameWithoutTitle = (profile.name as string).replace(/^Dr\.\s*/, '');
+const words     = nameWithoutTitle.trim().split(' ');
+const firstName = words.slice(0, -1).join(' ');
+const lastName  = words[words.length - 1];
+const hasPrefix = (profile.name as string).startsWith('Dr.');
+
+const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: string) => p.trim());
 ---
+<Layout
+  title={`${profile.name} | ${profile.title}`}
+  description={`${profile.name} — ${profile.title} at ${profile.affiliation}`}
+>
+  <SideNav profile={profile} contact={contact} />
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <section
+    id="about"
+    class="scroll-mt-14 lg:scroll-mt-0 min-h-screen flex items-center
+           py-16 px-6 sm:px-10 lg:px-16
+           border-b border-gray-200 dark:border-slate-800"
+  >
+    <div class="w-full max-w-3xl">
+
+      <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-3">
+        {hasPrefix && (
+          <span class="block text-2xl font-semibold text-gray-400 dark:text-slate-500 mb-1">Dr.</span>
+        )}
+        <span class="text-gray-900 dark:text-slate-50">{firstName} </span>
+        <span class="text-primary">{lastName}</span>
+      </h1>
+
+      <p class="text-lg font-semibold uppercase tracking-widest text-gray-500 dark:text-slate-400 mb-6">
+        {profile.title} &middot; {profile.affiliation}
+      </p>
+
+      <div class="flex flex-wrap gap-x-6 gap-y-2 items-center text-base text-gray-600 dark:text-slate-400 mb-8">
+        {contact.email && (
+          <a href={`mailto:${contact.email}`}
+             class="flex items-center gap-2 hover:text-primary dark:hover:text-primary transition-colors font-medium">
+            <span class="i-ph-envelope-bold w-4 h-4"></span>
+            {contact.email}
+          </a>
+        )}
+        {contact.lab_url && (
+          <a href={contact.lab_url} target="_blank" rel="noopener"
+             class="flex items-center gap-2 hover:text-primary dark:hover:text-primary transition-colors font-medium">
+            <span class="i-ph-flask-bold w-4 h-4"></span>
+            Research Group
+          </a>
+        )}
+        {profile.cv && (
+          <a href={profile.cv}
+             class="flex items-center gap-2 hover:text-primary dark:hover:text-primary transition-colors font-medium">
+            <span class="i-ph-file-text-bold w-4 h-4"></span>
+            CV
+          </a>
+        )}
+        {contact.location && (
+          <span class="flex items-center gap-2 text-gray-400 dark:text-slate-500">
+            <span class="i-ph-map-pin-bold w-4 h-4"></span>
+            {contact.location}
+          </span>
+        )}
+      </div>
+
+      <div class="space-y-4 text-lg text-gray-700 dark:text-slate-300 leading-relaxed">
+        {bioParagraphs.map((para: string) => <p>{para}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <Section id="news" title="News">
+    <ul class="space-y-3">
+      {news.map((item: any) => (
+        <li class="flex gap-4">
+          <span class="font-mono text-sm text-gray-400 dark:text-slate-500 flex-shrink-0 w-16 pt-0.5">
+            {item.date}
+          </span>
+          <span class="text-gray-700 dark:text-slate-300">{item.text}</span>
+        </li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section id="publications" title="Publications">
+    <PubList publications={publications} />
+  </Section>
+
+  <Section id="research" title="Research">
+    <p class="text-lg text-gray-700 dark:text-slate-300 mb-6 leading-relaxed">
+      My research lies at the intersection of machine learning, computer vision, and robotics.
+      I focus on building systems that can perceive, reason, and act in the physical world.
+    </p>
+    <ul class="space-y-4">
+      {[
+        ["3D Scene Understanding",   "Neural scene representations, NeRF, implicit surfaces"],
+        ["Robot Manipulation",        "Dexterous grasping, deformable object manipulation, sim-to-real"],
+        ["Embodied AI",               "Language-guided navigation, instruction following, world models"],
+        ["Generative Models",         "Diffusion models for robotic learning, data augmentation, planning"],
+      ].map(([title, desc]) => (
+        <li class="flex gap-4">
+          <span class="text-primary font-bold text-lg mt-0.5 flex-shrink-0">▶</span>
+          <span class="text-gray-700 dark:text-slate-300">
+            <strong class="text-gray-900 dark:text-slate-100 font-bold">{title}</strong>
+            {' — '}{desc}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section id="experience" title="Experience">
+    <ul class="space-y-8">
+      {experience.map((item: any) => (
+        <li class="flex flex-col sm:flex-row gap-2 sm:gap-8">
+          <div class="font-mono text-sm text-gray-400 dark:text-slate-500 sm:w-36 flex-shrink-0 pt-0.5">
+            {item.period}
+          </div>
+          <div>
+            <p class="text-lg font-bold text-gray-900 dark:text-slate-100">{item.role}</p>
+            <p class="text-base text-gray-600 dark:text-slate-400 mt-0.5">{item.company}</p>
+            {item.description && (
+              <p class="text-base text-gray-500 dark:text-slate-500 mt-1.5 leading-relaxed">
+                {item.description}
+              </p>
+            )}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section id="education" title="Education">
+    <ul class="space-y-8">
+      {education.map((item: any) => (
+        <li class="flex flex-col sm:flex-row gap-2 sm:gap-8">
+          <div class="font-mono text-sm text-gray-400 dark:text-slate-500 sm:w-36 flex-shrink-0 pt-0.5">
+            {item.period}
+          </div>
+          <div>
+            <p class="text-lg font-bold text-gray-900 dark:text-slate-100">{item.degree}</p>
+            <p class="text-base text-gray-600 dark:text-slate-400 mt-0.5">{item.institution}</p>
+            {item.note && (
+              <p class="text-base text-gray-500 dark:text-slate-500 mt-1 italic">{item.note}</p>
+            )}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section id="awards" title="Awards &amp; Honors">
+    <ul class="space-y-3">
+      {awards.map((item: any) => (
+        <li class="flex flex-col sm:flex-row gap-1 sm:gap-8">
+          <span class="font-mono text-sm font-bold text-gray-400 dark:text-slate-500 sm:w-12 flex-shrink-0">
+            {item.year}
+          </span>
+          <span class="text-gray-800 dark:text-slate-200">{item.description}</span>
+        </li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section id="service" title="Activity and Service">
+    <div class="space-y-8">
+      {service.map((cat: any) => (
+        <div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-slate-100 mb-3">{cat.category}</h3>
+          <ul class="space-y-1.5">
+            {cat.items.map((item: string) => (
+              <li class="flex gap-3 text-gray-700 dark:text-slate-300">
+                <span class="text-gray-300 dark:text-slate-600 flex-shrink-0 mt-1">–</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <footer class="py-8 px-6 sm:px-10 lg:px-16 text-sm text-gray-400 dark:text-slate-600">
+    © {new Date().getFullYear()} {profile.name} · Built with
+    <a href="https://astro.build" class="hover:text-primary transition-colors">Astro</a>
+  </footer>
+
+</Layout>

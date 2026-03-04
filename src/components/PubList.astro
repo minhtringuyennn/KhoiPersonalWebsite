@@ -1,0 +1,70 @@
+---
+interface PubLinks {
+  pdf?: string;
+  arxiv?: string;
+  code?: string;
+  project?: string;
+}
+interface Publication {
+  title: string;
+  authors: string;
+  venue: string;
+  year: number;
+  links?: PubLinks;
+  note?: string;
+}
+interface Props { publications: Publication[]; }
+const { publications } = Astro.props;
+
+const byYear = publications.reduce(
+  (acc, pub) => {
+    if (!acc[pub.year]) acc[pub.year] = [];
+    acc[pub.year].push(pub);
+    return acc;
+  },
+  {} as Record<number, Publication[]>
+);
+const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+
+function highlightAuthors(authors: string): string {
+  return authors.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+}
+---
+<div class="space-y-10">
+  {years.map(year => (
+    <div>
+      <h3 class="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">
+        {year}
+      </h3>
+      <div class="space-y-5">
+        {byYear[year].map(pub => (
+          <p class="text-gray-800 dark:text-slate-200 leading-relaxed">
+            <span set:html={highlightAuthors(pub.authors)} />.{' '}
+            {pub.links?.arxiv
+              ? <a href={pub.links.arxiv} target="_blank" rel="noopener"
+                   class="font-semibold text-primary hover:underline underline-offset-2">
+                  &ldquo;{pub.title}&rdquo;
+                </a>
+              : pub.links?.pdf
+              ? <a href={pub.links.pdf}
+                   class="font-semibold text-primary hover:underline underline-offset-2">
+                  &ldquo;{pub.title}&rdquo;
+                </a>
+              : <strong>&ldquo;{pub.title}&rdquo;</strong>
+            }.{' '}
+            <em class="text-gray-600 dark:text-slate-400">{pub.venue}</em>
+            {pub.note && <strong class="text-red-500"> {pub.note}</strong>}.
+            {pub.links && (
+              <span class="ml-1 inline-flex gap-2 text-sm">
+                {pub.links.pdf     && <a href={pub.links.pdf}     class="text-primary hover:underline font-semibold">[PDF]</a>}
+                {pub.links.arxiv   && <a href={pub.links.arxiv}   target="_blank" rel="noopener" class="text-primary hover:underline font-semibold">[arXiv]</a>}
+                {pub.links.code    && <a href={pub.links.code}    target="_blank" rel="noopener" class="text-primary hover:underline font-semibold">[code]</a>}
+                {pub.links.project && <a href={pub.links.project} class="text-primary hover:underline font-semibold">[project]</a>}
+              </span>
+            )}
+          </p>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>

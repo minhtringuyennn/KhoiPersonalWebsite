@@ -1,0 +1,19 @@
+- role: "Assistant Professor"
+  company: "Carnegie Mellon University, School of Computer Science"
+  period: "2022 – Present"
+  description: "Leading the Machine Learning & Robotics Lab. Teaching graduate courses in computer vision and robot learning."
+
+- role: "Postdoctoral Researcher"
+  company: "MIT CSAIL"
+  period: "2020 – 2022"
+  description: "Research on neural scene representations and robot manipulation. Advisor: Prof. John Doe."
+
+- role: "Research Intern"
+  company: "Google DeepMind"
+  period: "Summer 2019"
+  description: "Worked on reinforcement learning for robotic manipulation tasks."
+
+- role: "Research Intern"
+  company: "NVIDIA Research"
+  period: "Summer 2018"
+  description: "Developed differentiable rendering methods for 3D scene understanding."
