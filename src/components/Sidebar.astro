@@ -22,28 +22,31 @@ interface Props {
   contact: Contact;
 }
 
+import { existsSync } from 'fs';
+import { join } from 'path';
+import { placeholderSvg, initials } from '../utils/placeholder';
 const { profile, contact } = Astro.props;
+
+const photoPath = profile.photo?.startsWith('/') ? profile.photo.slice(1) : profile.photo;
+const photoExists = photoPath ? existsSync(join(process.cwd(), 'public', photoPath)) : false;
+const photoSrc = photoExists ? profile.photo : placeholderSvg(initials(profile.name), 176);
 ---
 <aside class="w-56 flex-shrink-0">
   <div class="sticky top-16 space-y-4">
-    <!-- Photo -->
     <div class="text-center">
       <img
-        src={profile.photo}
+        src={photoSrc}
         alt={profile.name}
         class="w-44 h-44 rounded-full object-cover mx-auto border-4 border-gray-100 shadow"
-        onerror="this.style.display='none'"
       />
     </div>
 
-    <!-- Name & Title -->
     <div class="text-center">
       <h1 class="text-lg font-bold text-gray-900 leading-snug">{profile.name}</h1>
       <p class="text-sm text-gray-600 mt-1">{profile.title}</p>
       <p class="text-xs text-gray-500 mt-0.5 leading-snug">{profile.affiliation}</p>
     </div>
 
-    <!-- CV Download -->
     {profile.cv && (
       <div class="text-center">
         <a
@@ -55,7 +58,6 @@ const { profile, contact } = Astro.props;
       </div>
     )}
 
-    <!-- Contact Links -->
     <div class="space-y-2 pt-1">
       {contact.email && (
         <a href={`mailto:${contact.email}`} class="flex items-center gap-2 text-sm text-gray-600 hover:text-primary transition-colors">

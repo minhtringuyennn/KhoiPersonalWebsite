@@ -1,4 +1,8 @@
 ---
+import { existsSync } from 'fs';
+import { join } from 'path';
+import { placeholderSvg, initials } from '../utils/placeholder';
+
 interface Profile { name: string; photo: string; }
 interface Contact {
   github?: string; twitter?: string;
@@ -6,6 +10,10 @@ interface Contact {
 }
 interface Props { profile: Profile; contact: Contact; }
 const { profile, contact } = Astro.props;
+
+const photoPath = profile.photo?.startsWith('/') ? profile.photo.slice(1) : profile.photo;
+const photoExists = photoPath ? existsSync(join(process.cwd(), 'public', photoPath)) : false;
+const photoSrc = photoExists ? profile.photo : placeholderSvg(initials(profile.name), 128);
 
 const sections = [
   { id: "about",        label: "About",              icon: "i-ph-user-bold" },
@@ -70,10 +78,9 @@ const sections = [
   <a id="sidebar-photo" href="#about"
     class="block pt-4 pb-4 px-6 text-center shrink-0">
     <img
-      src={profile.photo}
+      src={photoSrc}
       alt={profile.name}
       class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white/10"
-      onerror="this.style.opacity='0.15'"
     />
   </a>
 
