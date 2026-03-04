@@ -6,8 +6,11 @@ function textToColor(text: string): string {
   return PALETTE[Math.abs(h) % PALETTE.length];
 }
 
+const TITLES = /^(Dr|Prof|Mr|Mrs|Ms|Miss)\.?\s*/i;
+
 export function initials(name: string): string {
-  const w = name.trim().split(/\s+/);
+  const clean = name.replace(TITLES, '');
+  const w = clean.trim().split(/\s+/);
   return w.length === 1 ? w[0].slice(0, 2).toUpperCase() : (w[0][0] + w[w.length - 1][0]).toUpperCase();
 }
 
