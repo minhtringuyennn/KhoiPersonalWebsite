@@ -8,14 +8,14 @@ interface Contact {
   github?: string; twitter?: string;
   linkedin?: string; scholar?: string;
 }
-interface Props { profile: Profile; contact: Contact; }
-const { profile, contact } = Astro.props;
+interface Props { profile: Profile; contact: Contact; sections?: Record<string, boolean>; }
+const { profile, contact, sections: sectionVisibility = {} } = Astro.props;
 
 const photoPath = profile.photo?.startsWith('/') ? profile.photo.slice(1) : profile.photo;
 const photoExists = photoPath ? existsSync(join(process.cwd(), 'public', photoPath)) : false;
 const photoSrc = photoExists ? profile.photo : placeholderSvg(initials(profile.name), 128);
 
-const sections = [
+const allSections = [
   { id: "about",        label: "About",              icon: "i-ph-user-bold" },
   { id: "news",         label: "News",               icon: "i-ph-newspaper-bold" },
   { id: "publications", label: "Publications",       icon: "i-ph-books-bold" },
@@ -25,10 +25,11 @@ const sections = [
   { id: "awards",       label: "Awards",             icon: "i-ph-trophy-bold" },
   { id: "service",      label: "Activity & Service", icon: "i-ph-handshake-bold" },
 ];
+const sections = allSections.filter(s => sectionVisibility[s.id] !== false);
 ---
 
 <div class="lg:hidden fixed top-0 left-0 right-0 z-50 h-14
-            bg-[#1e2433] dark:bg-[#0d1117] shadow
+            bg-[#003D7C] dark:bg-[#0d1117] shadow
             flex items-center justify-between px-4">
   <a href="#about" class="text-white font-bold text-base truncate">{profile.name}</a>
   <div class="flex items-center gap-2">
@@ -46,7 +47,7 @@ const sections = [
 
 <div id="mobile-nav"
   class="hidden lg:hidden fixed top-14 left-0 right-0 z-40
-         bg-[#1e2433] dark:bg-[#0d1117] shadow-xl border-t border-white/10">
+         bg-[#003D7C] dark:bg-[#0d1117] shadow-xl border-t border-white/10">
   <ul class="py-1">
     {sections.map(s => (
       <li>
@@ -64,7 +65,7 @@ const sections = [
 
 <nav id="sidebar"
   class="hidden lg:flex fixed left-0 top-0 h-screen flex-col overflow-hidden z-50
-         bg-[#1e2433] dark:bg-[#0d1117] shadow-xl transition-colors duration-200">
+         bg-[#003D7C] dark:bg-[#0d1117] shadow-xl transition-colors duration-200">
 
   <div id="sidebar-toggle-row" class="flex items-center justify-end px-2 pt-2 pb-1 shrink-0">
     <button id="sidebar-toggle" aria-label="Toggle sidebar"

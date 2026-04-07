@@ -17,8 +17,8 @@ export default defineConfig({
   ],
   theme: {
     colors: {
-      primary: '#2563eb',
-      accent:  '#1d4ed8',
+      primary: '#003D7C',
+      accent:  '#EF7C00',
     },
   },
 });

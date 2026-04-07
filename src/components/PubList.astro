@@ -42,12 +42,12 @@ function highlightAuthors(authors: string): string {
             <span set:html={highlightAuthors(pub.authors)} />.{' '}
             {pub.links?.arxiv
               ? <a href={pub.links.arxiv} target="_blank" rel="noopener"
-                   class="font-semibold text-primary hover:underline underline-offset-2">
+                   class="font-semibold text-primary hover:text-accent hover:underline underline-offset-2">
                   &ldquo;{pub.title}&rdquo;
                 </a>
               : pub.links?.pdf
               ? <a href={pub.links.pdf}
-                   class="font-semibold text-primary hover:underline underline-offset-2">
+                   class="font-semibold text-primary hover:text-accent hover:underline underline-offset-2">
                   &ldquo;{pub.title}&rdquo;
                 </a>
               : <strong>&ldquo;{pub.title}&rdquo;</strong>
@@ -56,10 +56,10 @@ function highlightAuthors(authors: string): string {
             {pub.note && <strong class="text-red-500"> {pub.note}</strong>}.
             {pub.links && (
               <span class="ml-1 inline-flex gap-2 text-sm">
-                {pub.links.pdf     && <a href={pub.links.pdf}     class="text-primary hover:underline font-semibold">[PDF]</a>}
-                {pub.links.arxiv   && <a href={pub.links.arxiv}   target="_blank" rel="noopener" class="text-primary hover:underline font-semibold">[arXiv]</a>}
-                {pub.links.code    && <a href={pub.links.code}    target="_blank" rel="noopener" class="text-primary hover:underline font-semibold">[code]</a>}
-                {pub.links.project && <a href={pub.links.project} class="text-primary hover:underline font-semibold">[project]</a>}
+                {pub.links.pdf     && <a href={pub.links.pdf}     class="text-primary hover:text-accent hover:underline font-semibold">[PDF]</a>}
+                {pub.links.arxiv   && <a href={pub.links.arxiv}   target="_blank" rel="noopener" class="text-primary hover:text-accent hover:underline font-semibold">[arXiv]</a>}
+                {pub.links.code    && <a href={pub.links.code}    target="_blank" rel="noopener" class="text-primary hover:text-accent hover:underline font-semibold">[code]</a>}
+                {pub.links.project && <a href={pub.links.project} class="text-primary hover:text-accent hover:underline font-semibold">[project]</a>}
               </span>
             )}
           </p>

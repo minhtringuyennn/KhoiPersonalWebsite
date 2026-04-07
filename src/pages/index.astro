@@ -20,6 +20,7 @@ const experience   = loadYaml('experience.yaml') as any[];
 const education    = loadYaml('education.yaml') as any[];
 const awards       = loadYaml('awards.yaml') as any[];
 const service      = loadYaml('service.yaml') as any[];
+const sections     = loadYaml('sections.yaml') as Record<string, boolean>;
 
 const nameWithoutTitle = (profile.name as string).replace(/^Dr\.\s*/, '');
 const words     = nameWithoutTitle.trim().split(' ');
@@ -33,8 +34,9 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
   title={`${profile.name} | ${profile.title}`}
   description={`${profile.name} — ${profile.title} at ${profile.affiliation}`}
 >
-  <SideNav profile={profile} contact={contact} />
+  <SideNav profile={profile} contact={contact} sections={sections} />
 
+  {sections.about !== false && (
   <section
     id="about"
     class="scroll-mt-14 lg:scroll-mt-0 min-h-screen flex items-center
@@ -48,7 +50,7 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
           <span class="block text-2xl font-semibold text-gray-400 dark:text-slate-500 mb-1">Dr.</span>
         )}
         <span class="text-gray-900 dark:text-slate-50">{firstName} </span>
-        <span class="text-primary">{lastName}</span>
+        <span class="text-accent">{lastName}</span>
       </h1>
 
       <p class="text-lg font-semibold uppercase tracking-widest text-gray-500 dark:text-slate-400 mb-6">
@@ -58,21 +60,21 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
       <div class="flex flex-wrap gap-x-6 gap-y-2 items-center text-base text-gray-600 dark:text-slate-400 mb-8">
         {contact.email && (
           <a href={`mailto:${contact.email}`}
-             class="flex items-center gap-2 hover:text-primary dark:hover:text-primary transition-colors font-medium">
+             class="flex items-center gap-2 hover:text-accent dark:hover:text-accent transition-colors font-medium">
             <span class="i-ph-envelope-bold w-4 h-4"></span>
             {contact.email}
           </a>
         )}
         {contact.lab_url && (
           <a href={contact.lab_url} target="_blank" rel="noopener"
-             class="flex items-center gap-2 hover:text-primary dark:hover:text-primary transition-colors font-medium">
+             class="flex items-center gap-2 hover:text-accent dark:hover:text-accent transition-colors font-medium">
             <span class="i-ph-flask-bold w-4 h-4"></span>
             Research Group
           </a>
         )}
         {profile.cv && (
           <a href={profile.cv}
-             class="flex items-center gap-2 hover:text-primary dark:hover:text-primary transition-colors font-medium">
+             class="flex items-center gap-2 hover:text-accent dark:hover:text-accent transition-colors font-medium">
             <span class="i-ph-file-text-bold w-4 h-4"></span>
             CV
           </a>
@@ -90,7 +92,9 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
       </div>
     </div>
   </section>
+  )}
 
+  {sections.news !== false && (
   <Section id="news" title="News">
     <ul class="space-y-3">
       {news.map((item: any) => (
@@ -103,11 +107,15 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
       ))}
     </ul>
   </Section>
+  )}
 
+  {sections.publications !== false && (
   <Section id="publications" title="Publications">
     <PubList publications={publications} />
   </Section>
+  )}
 
+  {sections.research !== false && (
   <Section id="research" title="Research">
     <p class="text-lg text-gray-700 dark:text-slate-300 mb-6 leading-relaxed">
       My research lies at the intersection of machine learning, computer vision, and robotics.
@@ -130,7 +138,9 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
       ))}
     </ul>
   </Section>
+  )}
 
+  {sections.experience !== false && (
   <Section id="experience" title="Experience">
     <ul class="space-y-8">
       {experience.map((item: any) => (
@@ -151,7 +161,9 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
       ))}
     </ul>
   </Section>
+  )}
 
+  {sections.education !== false && (
   <Section id="education" title="Education">
     <ul class="space-y-8">
       {education.map((item: any) => (
@@ -170,7 +182,9 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
       ))}
     </ul>
   </Section>
+  )}
 
+  {sections.awards !== false && (
   <Section id="awards" title="Awards &amp; Honors">
     <ul class="space-y-3">
       {awards.map((item: any) => (
@@ -183,7 +197,9 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
       ))}
     </ul>
   </Section>
+  )}
 
+  {sections.service !== false && (
   <Section id="service" title="Activity and Service">
     <div class="space-y-8">
       {service.map((cat: any) => (
@@ -201,6 +217,7 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
       ))}
     </div>
   </Section>
+  )}
 
   <footer class="py-8 px-6 sm:px-10 lg:px-16 text-sm text-gray-400 dark:text-slate-600">
     © {new Date().getFullYear()} {profile.name}
