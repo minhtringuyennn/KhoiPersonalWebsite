@@ -6,6 +6,7 @@ import PubList from '../components/PubList.astro';
 import { readFileSync } from 'fs';
 import yaml from 'js-yaml';
 import { join } from 'path';
+import { marked } from 'marked';
 
 const dataDir = join(process.cwd(), 'src/data');
 function loadYaml(file: string) {
@@ -103,8 +104,8 @@ const resolvePath = (p: string) => p.startsWith('/') ? import.meta.env.BASE_URL.
         )}
       </div>
 
-      <div class="space-y-4 text-lg text-gray-700 dark:text-slate-300 leading-relaxed">
-        {bioParagraphs.map((para: string) => <p>{para}</p>)}
+      <div class="space-y-4 text-lg text-gray-700 dark:text-slate-300 leading-relaxed [&_a]:text-primary [&_a]:hover:text-accent [&_a]:font-semibold [&_a]:hover:underline [&_a]:underline-offset-2">
+        {bioParagraphs.map((para: string) => <p set:html={marked.parseInline(para)}></p>)}
       </div>
     </div>
   </section>
