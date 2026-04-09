@@ -43,8 +43,8 @@ const resolvePath = (p: string) => p.startsWith('/') ? import.meta.env.BASE_URL.
       </h3>
       <div class="space-y-5">
         {byYear[year].map(pub => (
-          <p class="text-gray-800 dark:text-slate-200 leading-relaxed">
-            <span set:html={highlightAuthors(pub.authors)} />.{' '}
+          <div class="text-gray-800 dark:text-slate-200 leading-relaxed">
+            <div class="mb-1">
             {pub.links?.arxiv
               ? <a href={pub.links.arxiv} target="_blank" rel="noopener"
                    class="font-semibold text-primary hover:text-accent hover:underline underline-offset-2">
@@ -67,7 +67,9 @@ const resolvePath = (p: string) => p.startsWith('/') ? import.meta.env.BASE_URL.
                 {pub.links.project && <a href={pub.links.project} class="text-primary hover:text-accent hover:underline font-semibold">[project]</a>}
               </span>
             )}
-          </p>
+            </div>
+            <div><span set:html={highlightAuthors(pub.authors)} />.</div>
+          </div>
         ))}
       </div>
     </div>
