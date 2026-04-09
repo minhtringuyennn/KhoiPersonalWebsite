@@ -1,25 +1,23 @@
-- category: "Area Chair / Senior Reviewer"
-  items:
-    - "NeurIPS 2024, 2023"
-    - "ICLR 2024, 2023"
-    - "ICML 2024"
-
-- category: "Program Committee"
-  items:
-    - "CVPR 2024, 2023, 2022"
-    - "ICCV 2023"
-    - "ECCV 2024"
-    - "ICRA 2024, 2023"
-    - "RSS 2024"
-
 - category: "Workshop Organization"
   items:
-    - "Learning for Robot Manipulation Workshop, ICRA 2024"
-    - "3D Vision and Robotics Workshop, CVPR 2023"
+    - "Integration of Deep Neural Models and Differential Equations, ICLR 2020"
+    - "Integration of Deep Learning Theories, NeurIPS 2018"
 
-- category: "Journal Reviewer"
+- category: "Invited Talks"
   items:
-    - "IEEE Transactions on Robotics (T-RO)"
-    - "International Journal of Robotics Research (IJRR)"
-    - "IEEE Robotics and Automation Letters (RA-L)"
-    - "Journal of Machine Learning Research (JMLR)"
+    - "A Primal-Dual Framework for Transformers and Neural Networks. Canadian Mathematical Society Winter Meeting (Special Session on Mathematics of Machine Learning), 2022"
+    - "Transformer with Fourier Integral Attentions. SIAM Conference on Computational Science and Engineering (CSE), 2023"
+    - "Principled Models for Machine Learning. Math Machine Learning Seminar, Max Planck Institute & UCLA Applied Math Colloquium, 2022"
+    - "Transformer with a Mixture of Gaussian Keys. Geometry of Machine Learning, SIAM Texas-Louisiana Section, 2021"
+    - "Momentum-Based and Fast Multipole Methods for Designing Deep Learning Models. Mathematical Foundation of Deep Learning, SIAM Texas-Louisiana Section, 2021"
+
+- category: "Conference & Workshop Presentations"
+  items:
+    - "Brain-inspired Robust Vision Using CNNs with Feedback. NeurIPS NeuroAI Workshop, 2019 (Poster)"
+    - "Conditional Continuous Normalizing Flows for Physics-Inspired Learning. NVIDIA Onsite Research Event, 2019 (Lightning Talk)"
+    - "Neural Rendering Model: Rethinking Neural Networks from the Joint Generation and Prediction Perspective. NeurIPS Workshop on Integration of Deep Learning Theories, 2018 (Contributed talk)"
+    - "EnergyNet: Energy-Efficient Dynamic Inference. NeurIPS Workshop on Compact Deep Neural Networks, 2018 (Poster)"
+    - "TremorGAN: Deep Generative Model for Geophysical Signal Generation. NeurIPS Workshop on ML for Geophysical Signals, 2018 (Poster)"
+    - "The Latent-Dependent Deep Rendering Model. ICML Workshop on Deep Generative Models, 2018 (Poster)"
+    - "Mixed Reality GANs: Closing the Visual Gap between Synthetic and Real Images. Amazon Graduate Research Symposium, 2017 (Poster)"
+    - "A Probabilistic Framework for Deep Learning. COSYNE, 2016 (Poster)"

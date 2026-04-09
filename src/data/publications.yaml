@@ -1,68 +1,448 @@
-- title: "DiffGrasp: Diffusion-Based Dexterous Grasping with Language Guidance"
-  authors: "A. Chen, **J. Smith**, B. Johnson, C. Williams"
-  venue: "NeurIPS 2024"
-  year: 2024
+# Journal Publications
+- title: "Learning and predicting dynamics of compositional multiphase mixtures using Graph Neural Networks"
+  authors: "Duc Thach Son Vu, **Tan M. Nguyen**, Weiqing Ren"
+  venue: "Journal of Computational Physics, 2025"
+  year: 2025
+  category: "Journal"
   links:
-    pdf: "#"
-    arxiv: "https://arxiv.org/abs/2024.00001"
-    code: "https://github.com/jsmith-ml/diffgrasp"
-    project: "#"
+    pdf: "https://www.sciencedirect.com/science/article/abs/pii/S0021999125001342"
 
-- title: "SceneFlow: Learning Consistent 3D Scene Representations from Monocular Video"
-  authors: "**J. Smith**, D. Lee, E. Park"
-  venue: "CVPR 2024"
-  year: 2024
-  links:
-    pdf: "#"
-    arxiv: "https://arxiv.org/abs/2024.00002"
-    code: "https://github.com/jsmith-ml/sceneflow"
-
-- title: "RoboGen: Towards Unleashing Infinite Data for Automated Robot Learning via Generative Simulation"
-  authors: "Y. Wang, **J. Smith**, F. Chen, G. Kim"
-  venue: "CVPR 2024"
-  year: 2024
-  links:
-    pdf: "#"
-    arxiv: "https://arxiv.org/abs/2024.00003"
-
-- title: "NeRF-Grasp: 6-DoF Grasp Detection from Neural Radiance Fields"
-  authors: "**J. Smith**, G. Kim"
-  venue: "ICLR 2024"
-  year: 2024
-  links:
-    pdf: "#"
-    arxiv: "https://arxiv.org/abs/2023.00004"
-    code: "https://github.com/jsmith-ml/nerf-grasp"
-
-- title: "GROOT: Learning to Manipulate Deformable Objects with Generalizable Representations"
-  authors: "H. Liu, **J. Smith**, I. Martinez"
-  venue: "NeurIPS 2023"
+- title: "A Bayesian Perspective of Convolutional Neural Networks through a Deconvolutional Generative Model"
+  authors: "**Tan M. Nguyen***, Nhat Ho *, Ankit B. Patel, Anima Anandkumar, Michael I. Jordan, Richard G. Baraniuk"
+  venue: "Journal of Machine Learning Research, 2023"
   year: 2023
+  category: "Journal"
   links:
-    pdf: "#"
-    arxiv: "https://arxiv.org/abs/2023.00005"
+    arxiv: "https://arxiv.org/pdf/1811.02657.pdf"
 
-- title: "Perceive, Predict, and Plan: Safe Motion Planning Through Interpretable Semantic Representations"
-  authors: "**J. Smith**, J. Brown"
-  venue: "ICRA 2023"
-  year: 2023
-  links:
-    pdf: "#"
-    arxiv: "https://arxiv.org/abs/2023.00006"
-
-- title: "Neural Descriptor Fields: SE(3)-Equivariant Object Representations for Manipulation"
-  authors: "**J. Smith**, K. Park, L. Chen"
-  venue: "ICRA 2022"
+- title: "Scheduled Restart Momentum for Accelerated Stochastic Gradient Descent"
+  authors: "Bao Wang *, **Tan M. Nguyen** *, Andrea L. Bertozzi, Richard G. Baraniuk, Stanley J. Osher"
+  venue: "SIAM Journal on Imaging Sciences, 2022"
   year: 2022
+  category: "Journal"
   links:
-    pdf: "#"
-    arxiv: "https://arxiv.org/abs/2022.00001"
-    code: "https://github.com/jsmith-ml/neural-descriptor-fields"
+    pdf: "/Scheduled_Restart_SGD.pdf"
 
-- title: "3D-OES: Viewpoint-Invariant Object-Factorized Environment Simulators"
-  authors: "M. Wang, **J. Smith**, N. Li"
-  venue: "CoRL 2021"
-  year: 2021
+- title: "How Does Momentum Benefit Deep Neural Networks Architecture Design? A Few Case Studies"
+  authors: "Bao Wang, Hedi Xia, **Tan M. Nguyen**, Stanley J. Osher"
+  venue: "Research in the Mathematical Sciences, 2022"
+  year: 2022
+  category: "Journal"
   links:
-    pdf: "#"
-    arxiv: "https://arxiv.org/abs/2021.00001"
+    pdf: "/How_Does_Momentum_Benefit_DNN_Design.pdf"
+
+- title: "Dual Dynamic Inference: Enabling More Efficient, Adaptive, and Controllable Deep Inference"
+  authors: "Yue Wang, Jianghao Shen, Ting-Kuei Hu, Pengfei Xu, **Tan M. Nguyen**, Richard G. Baraniuk, Zhangyang Wang, Yingyan Lin"
+  venue: "IEEE Journal of Selected Topics in Signal Processing, 2020"
+  year: 2020
+  category: "Journal"
+  links:
+    arxiv: "https://arxiv.org/pdf/1907.04523.pdf"
+
+# Conference Publications — 2025
+- title: "On Linear Mode Connectivity of Mixture-of-Experts Architectures"
+  authors: "Viet-Hoang Tran *, Van-Hoan Trinh *, Khanh Vinh Bui *, **Tan M. Nguyen**"
+  venue: "Conference on Neural Information Processing Systems (oral, NeurIPS), 2025"
+  year: 2025
+  category: "Conference"
+  note: "oral"
+  links:
+    arxiv: "https://arxiv.org/pdf/2509.11348"
+
+- title: "Angular Steering: Behavior Control via Rotation in Activation Space"
+  authors: "Hieu M. Vu, **Tan M. Nguyen**"
+  venue: "Conference on Neural Information Processing Systems (spotlight, NeurIPS), 2025"
+  year: 2025
+  category: "Conference"
+  note: "spotlight"
+  links:
+    arxiv: "https://arxiv.org/pdf/2510.26243"
+
+- title: "Dynamical Properties of Tokens in Self-Attention and Effects of Positional Encoding"
+  authors: "Duy-Tung Pham, An Nguyen The, Viet-Hoang Tran, Nhan-Phu Chung, Xin T. Tong, **Tan M. Nguyen** **, Thieu N. Vo **"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://www.arxiv.org/pdf/2512.03058"
+
+- title: "Tree-Sliced Entropy Partial Transport"
+  authors: "Viet-Hoang Tran, Thanh Tran, Thanh Chu, Tam Le **, **Tan M. Nguyen** **"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://openreview.net/pdf?id=41ZbysfW4h"
+
+- title: "The Blessing and Curse of Dimensionality in Safety Alignment"
+  authors: "Rachel S.Y. Teo *, Laziz U. Abdullaev *, **Tan M. Nguyen**"
+  venue: "Conference on Language Modeling (COLM), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2507.20333"
+
+- title: "Equivariant Polynomial Functional Networks"
+  authors: "Thieu N. Vo *, Hoang V. Tran *, Tho H. Tran *, An T. Nguyen, Thanh Tran, Minh-Khoi Nguyen-Nhat, Duy-Tung Pham, **Tan M. Nguyen**"
+  venue: "International Conference on Machine Learning (ICML), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2410.04213"
+
+- title: "Tree-Sliced Wasserstein Distance: A Geometric Perspective"
+  authors: "Hoang V. Tran *, Huyen Trang Pham *, Tho H. Tran, Minh-Khoi Nguyen-Nhat, Thanh Chu, Tam Le **, **Tan M. Nguyen** **"
+  venue: "International Conference on Machine Learning (ICML), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2406.13725"
+
+- title: "Tree-Sliced Wasserstein Distance with Nonlinear Projection"
+  authors: "Thanh Tran *, Hoang V. Tran *, Thanh Chu, Huyen Trang Pham, Laurent El Ghaoui, Tam Le **, **Tan M. Nguyen** **"
+  venue: "International Conference on Machine Learning (ICML), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2505.00968"
+
+- title: "Promoting Ensemble Diversity with Interactive Bayesian Distributional Robustness for Fine-tuning Foundation Models"
+  authors: "Ngoc-Quan Pham *, Tuan Truong *, Quyen Tran, **Tan M. Nguyen**, Dinh Phung, Trung Le"
+  venue: "International Conference on Machine Learning (ICML), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2503.11144"
+
+- title: "MoLEx: Mixture of Layer Experts for Fine-tuning with Sparse Upcycling"
+  authors: "Rachel S.Y. Teo, **Tan M. Nguyen**"
+  venue: "International Conference on Learning Representations (ICLR), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2503.11144"
+
+- title: "Transformer Meets Twicing: Harnessing Unattended Residual Information"
+  authors: "Laziz U. Abdullaev, **Tan M. Nguyen**"
+  venue: "International Conference on Learning Representations (ICLR), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2503.00687"
+
+- title: "Tight Clusters Make Specialized Experts"
+  authors: "Stefan K. Nielsen *, Rachel S.Y. Teo *, Laziz U. Abdullaev, **Tan M. Nguyen**"
+  venue: "International Conference on Learning Representations (ICLR), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2502.15315"
+
+- title: "Demystifying the Token Dynamics of Deep Selective State Space Models"
+  authors: "Thieu N. Vo, Duy-Tung Pham, Xin T. Tong, **Tan M. Nguyen**"
+  venue: "International Conference on Learning Representations (spotlight, ICLR), 2025"
+  year: 2025
+  category: "Conference"
+  note: "spotlight"
+  links:
+    arxiv: "https://arxiv.org/pdf/2410.03292"
+
+- title: "CAMEx: Curvature-aware Merging of Experts"
+  authors: "Viet Dung Nguyen, Minh Nguyen Hoang, Rachel S.Y. Teo, Luc Nguyen, **Tan M. Nguyen** **, Linh Duy Tran **"
+  venue: "International Conference on Learning Representations (ICLR), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2502.18821"
+
+- title: "Equivariant Neural Functional Networks for Transformers"
+  authors: "Hoang V. Tran *, Thieu N. Vo *, An T. Nguyen, Tho H. Tran, Minh-Khoi Nguyen-Nhat, Thanh Tran, Duy-Tung Pham, **Tan M. Nguyen**"
+  venue: "International Conference on Learning Representations (ICLR), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2410.04209"
+
+- title: "Distance-Based Tree-Sliced Wasserstein Distance"
+  authors: "Hoang V. Tran *, Minh-Khoi Nguyen-Nhat *, Huyen Trang Pham, Thanh Chu, Tam Le **, **Tan M. Nguyen** **"
+  venue: "International Conference on Learning Representations (ICLR), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2503.11050"
+
+- title: "Spherical Tree-Sliced Wasserstein Distance"
+  authors: "Hoang V. Tran *, Thanh Chu *, Minh-Khoi Nguyen-Nhat, Huyen Trang Pham, Tam Le **, **Tan M. Nguyen** **"
+  venue: "International Conference on Learning Representations (ICLR), 2025"
+  year: 2025
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2503.11249"
+
+# Conference Publications — 2024
+- title: "MomentumSMoE: Integrating Momentum into Sparse Mixture of Experts"
+  authors: "Rachel S.Y. Teo, **Tan M. Nguyen**"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2024"
+  year: 2024
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2410.14574"
+
+- title: "Unveiling the Hidden Structure of Self-Attention via Kernel Principal Component Analysis"
+  authors: "Rachel S.Y. Teo, **Tan M. Nguyen**"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2024"
+  year: 2024
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2406.13762"
+
+- title: "Monomial Matrix Group Equivariant Neural Functional Networks"
+  authors: "Hoang V. Tran *, Thieu N. Vo *, Tho H. Tran, An T. Nguyen, **Tan M. Nguyen**"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2024"
+  year: 2024
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2409.11697"
+
+- title: "Elliptical Attention"
+  authors: "Stefan K. Nielsen *, Laziz U. Abdullaev *, Rachel S.Y. Teo, **Tan M. Nguyen**"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2024"
+  year: 2024
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2406.13770"
+
+- title: "PIDformer: Transformer Meets Control Theory"
+  authors: "Tam Nguyen, Cesar A. Uribe, **Tan M. Nguyen** **, Richard Baraniuk **"
+  venue: "International Conference on Machine Learning (ICML), 2024"
+  year: 2024
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2402.15989"
+
+- title: "Neural Collapse for Cross-entropy Class-Imbalanced Learning with Unconstrained ReLU Features Model"
+  authors: "Hien Dang, Tho Tran Huu, **Tan M. Nguyen** **, Nhat Ho **"
+  venue: "International Conference on Machine Learning (ICML), 2024"
+  year: 2024
+  category: "Conference"
+  links:
+    pdf: "/neural_collapse_xentropy.pdf"
+
+- title: "Revisiting Kernel Attention with Correlated Gaussian Process Representation"
+  authors: "Long Minh Bui, Tho Tran Huu, Duy Dinh, **Tan M. Nguyen** **, Trong Nghia Hoang **"
+  venue: "Conference on Uncertainty in Artificial Intelligence (UAI), 2024"
+  year: 2024
+  category: "Conference"
+  links:
+    pdf: "/gp_transformer.pdf"
+
+- title: "Beyond Vanilla Variational Autoencoders: Detecting Posterior Collapse in Conditional and Hierarchical Variational Autoencoders"
+  authors: "Hien Dang, Tho Tran Huu, **Tan M. Nguyen** **, Nhat Ho **"
+  venue: "International Conference on Learning Representations (ICLR), 2024"
+  year: 2024
+  category: "Conference"
+  links:
+    pdf: "/beyond_vanil_vae.pdf"
+
+- title: "From Coupled Oscillators to Graph Neural Networks: Reducing Over-smoothing via a Kuramoto Model-based Approach"
+  authors: "Tuan Nguyen, Hirotada Honda, Takashi Sano, Vinh Nguyen *, Shugo Nakamura *, **Tan M. Nguyen** *"
+  venue: "International Conference on Artificial Intelligence and Statistics (AISTATS), 2024"
+  year: 2024
+  category: "Conference"
+  links:
+    pdf: "/KuramotoGNN.pdf"
+
+# Conference Publications — 2023
+- title: "Mitigating Over-smoothing in Transformers via Regularized Nonlocal Functionals"
+  authors: "Tam Nguyen, **Tan M. Nguyen**, Richard G. Baraniuk"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2023"
+  year: 2023
+  category: "Conference"
+  links:
+    pdf: "/NeuTRENO.pdf"
+
+- title: "Designing Robust Transformers using Robust Kernel Density Estimation"
+  authors: "Xing Han *, Tongzheng Ren *, **Tan M. Nguyen** *, Khai Nguyen, Joydeep Ghosh, Nhat Ho"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2023"
+  year: 2023
+  category: "Conference"
+  links:
+    pdf: "/Robust_transformers.pdf"
+
+- title: "Revisiting Over-smoothing and Over-squashing using Ollivier-Ricci Curvature"
+  authors: "Khang Nguyen, Hieu Nong, Vinh Nguyen, Nhat Ho, Stanley J. Osher, **Tan M. Nguyen**"
+  venue: "International Conference on Machine Learning (ICML), 2023"
+  year: 2023
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2211.15779"
+
+- title: "Neural Collapse in Deep Linear Networks: From Balanced to Imbalanced Data"
+  authors: "Hien Dang *, Tho Tran Huu *, Stanley J. Osher, Hung Tran-The, Nhat Ho **, **Tan M. Nguyen** **"
+  venue: "International Conference on Machine Learning (ICML), 2023"
+  year: 2023
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2301.00437"
+
+- title: "A Primal-Dual Framework for Transformers and Neural Networks"
+  authors: "**Tan M. Nguyen** *, Tam Nguyen *, Nhat Ho, Andrea L. Bertozzi, Richard G. Baraniuk, Stanley J. Osher"
+  venue: "International Conference on Learning Representations (notable-top-25%, ICLR), 2023"
+  year: 2023
+  category: "Conference"
+  note: "notable top-25%"
+  links:
+    pdf: "/Primal_Dual_Transformers.pdf"
+
+- title: "Hierarchical Sliced Wasserstein Distance"
+  authors: "Khai Nguyen, Tongzheng Ren, Huy Nguyen, Litu Rout, **Tan M. Nguyen**, Nhat Ho"
+  venue: "International Conference on Learning Representations (ICLR), 2023"
+  year: 2023
+  category: "Conference"
+  links:
+    pdf: "/Hierarchical_Sliced_Wasserstein_Distance.pdf"
+
+- title: "DeepGRAND: Deep Graph Neural Diffusion"
+  authors: "Khang Nguyen, Hieu Nong, Khuong Nguyen, **Tan M. Nguyen** **, Vinh Nguyen **"
+  venue: "Asilomar Conference, 2023"
+  year: 2023
+  category: "Conference"
+  links:
+    pdf: "/DeepGRAND.pdf"
+
+- title: "A Probabilistic Framework for Pruning Transformers via a Finite Admixture of Keys"
+  authors: "**Tan M. Nguyen** *, Tam Nguyen *, Long Bui, Hai Do, Dung Le, Hung Tran-The, Khuong Nguyen, Richard G. Baraniuk, Nhat Ho, Stanley J. Osher"
+  venue: "International Conference on Acoustics, Speech, and Signal Processing (notable-top-3%, ICASSP), 2023"
+  year: 2023
+  category: "Conference"
+  note: "notable top-3%"
+  links:
+    pdf: "/FiAK.pdf"
+
+# Conference Publications — 2022
+- title: "FourierFormer: Transformer Meets Generalized Fourier Integral Theorem"
+  authors: "**Tan M. Nguyen** *, Minh Pham *, Tam Nguyen, Khai Nguyen, Stanley J. Osher, Nhat Ho"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2022"
+  year: 2022
+  category: "Conference"
+  links:
+    pdf: "/FourierFormer.pdf"
+
+- title: "Improving Transformer with an Admixture of Attention Heads"
+  authors: "**Tan M. Nguyen** *, Tam Nguyen *, Hai Do, Khai Nguyen, Vishwanath Saragadam, Minh Pham, Khuong Nguyen, Nhat Ho **, Stanley J. Osher **"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2022"
+  year: 2022
+  category: "Conference"
+  links:
+    pdf: "/FiSHformer.pdf"
+
+- title: "Improving Neural Ordinary Differential Equations with Nesterov's Accelerated Gradient Method"
+  authors: "Nghia Nguyen *, **Tan M. Nguyen** *, Huyen Vo, Stanley J. Osher, Thieu Vo"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2022"
+  year: 2022
+  category: "Conference"
+  links:
+    pdf: "/NesterovNODE.pdf"
+
+- title: "Improving Transformers with Probabilistic Attention Keys"
+  authors: "Tam Nguyen *, **Tan M. Nguyen** *, Dung Le, Khuong Nguyen, Anh Tran, Richard G. Baraniuk, Nhat Ho **, Stanley J. Osher **"
+  venue: "International Conference on Machine Learning (ICML), 2022"
+  year: 2022
+  category: "Conference"
+  links:
+    pdf: "/MGK.pdf"
+
+- title: "GRAND++: Graph Neural Diffusion with a Source Term"
+  authors: "Matthew Thorpe *, **Tan M. Nguyen** *, Hedi Xia *, Thomas Strohmer, Andrea Bertozzi, Stanley J. Osher, Bao Wang"
+  venue: "International Conference on Learning Representations (ICLR), 2022"
+  year: 2022
+  category: "Conference"
+  links:
+    arxiv: "https://openreview.net/pdf?id=EMxu-dzvJk"
+
+- title: "Momentum Transformer: Closing the Performance Gap Between Self-attention and Its Linearization"
+  authors: "**Tan M. Nguyen**, Richard G. Baraniuk, Mike Kirby, Stanley J. Osher, Bao Wang"
+  venue: "Mathematical and Scientific Machine Learning (MSML), 2022"
+  year: 2022
+  category: "Conference"
+  links:
+    pdf: "/Momentum_Transformer.pdf"
+
+- title: "InfoCNF: An Efficient Conditional Continuous Normalizing Flow with Adaptive Solvers"
+  authors: "**Tan M. Nguyen**, Animesh Garg, Richard G. Baraniuk, Anima Anandkumar"
+  venue: "Asilomar Conference, 2022"
+  year: 2022
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/1912.03978.pdf"
+
+# Conference Publications — 2021
+- title: "FMMformer: Efficient and Flexible Transformer via Decomposed Near-field and Far-field Attention"
+  authors: "**Tan M. Nguyen**, Vai Suliafu, Stanley J. Osher, Long Chen, Bao Wang"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2021"
+  year: 2021
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2108.02347.pdf"
+
+- title: "Heavy Ball Neural Ordinary Differential Equations"
+  authors: "Hedi Xia, Vai Suliafu, Hangjie Ji, **Tan M. Nguyen**, Andrea Bertozzi, Stanley J. Osher, Bao Wang"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2021"
+  year: 2021
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2110.04840.pdf"
+
+# Conference Publications — 2020
+- title: "MomentumRNN: Integrating Momentum into Recurrent Neural Networks"
+  authors: "**Tan M. Nguyen**, Richard G. Baraniuk, Andrea Bertozzi, Stanley J. Osher, Bao Wang"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2020"
+  year: 2020
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2006.06919.pdf"
+
+- title: "Neural Networks with Recurrent Generative Feedback"
+  authors: "Yujia Huang, James Gornet, Sihui Dai, Zhiding Yu, **Tan M. Nguyen**, Doris Tsao, Anima Anandkumar"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2020"
+  year: 2020
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/2007.09200.pdf"
+
+# Conference Publications — 2019
+- title: "Neural Rendering Model: Joint Generation and Prediction for Semi-Supervised Learning"
+  authors: "**Tan M. Nguyen** *, Nhat Ho *, Ankit B. Patel, Anima Anandkumar, Michael I. Jordan, Richard G. Baraniuk"
+  venue: "Deep Math Conference (oral, DeepMath), 2019"
+  year: 2019
+  category: "Conference"
+  note: "oral"
+  links:
+    pdf: "/nrm.pdf"
+
+# Conference Publications — 2017
+- title: "Towards a Cortically Inspired Deep Learning Model: Semi-Supervised Learning, Divisive Normalization, and Synaptic Pruning"
+  authors: "**Tan M. Nguyen**, Wanjia Liu, Fabian Sinz, Richard G. Baraniuk, Andreas S. Tolias, Xaq Pitkow, Ankit B. Patel"
+  venue: "Conference on Cognitive Computational Neuroscience (CCN), 2017"
+  year: 2017
+  category: "Conference"
+  links:
+    pdf: "/cortically_inspired.pdf"
+
+# Conference Publications — 2016
+- title: "Probabilistic Framework for Deep Learning"
+  authors: "Ankit B. Patel, **Tan M. Nguyen**, Richard G. Baraniuk"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS), 2016"
+  year: 2016
+  category: "Conference"
+  links:
+    arxiv: "https://arxiv.org/pdf/1612.01936.pdf"
+
+# Application Papers
+- title: "Turbulence Forecasting via Neural ODE"
+  authors: "Gavin D. Portwood, Peetak P. Mitra, Mateus Dias Ribeiro, **Tan M. Nguyen**, Balasubramanya T. Nadiga, Juan A. Saenz, Michael Chertkov, Animesh Garg, Anima Anandkumar, Andreas Dengel, Richard G. Baraniuk, David P. Schmidt"
+  venue: "NeurIPS Workshop on Machine Learning and the Physical Sciences, 2019"
+  year: 2019
+  category: "Application"
+  links:
+    arxiv: "https://arxiv.org/pdf/1911.05180.pdf"

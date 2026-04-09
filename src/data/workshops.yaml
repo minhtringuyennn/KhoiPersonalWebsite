@@ -1,0 +1,61 @@
+workshops_organization:
+  - title: "Integration of Deep Neural Models and Differential Equations"
+    url: "https://iclr.cc/virtual_2020/workshops_5.html"
+    venue: "International Conference on Learning Representations (ICLR), 2020"
+
+  - title: "Integration of Deep Learning Theories"
+    url: "https://nips.cc/Conferences/2018/Schedule?showEvent=10916"
+    venue: "Conference on Neural Information Processing Systems (NeurIPS), 2018"
+
+talks:
+  - title: "A Primal-Dual Framework for Transformers and Neural Networks"
+    venue: "Special Session on \"Mathematics of Machine Learning\", Canadian Mathematical Society Winter Meeting, 2022"
+    type: "Invited talk"
+
+  - title: "Transformer with Fourier Integral Attentions"
+    venue: "Deep Learning for Sequence Modeling Minisymposium, the SIAM Conference on Computational Science and Engineering (CSE), 2023"
+    type: "Invited talk"
+
+  - title: "Principled Models for Machine Learning"
+    venue: "Math Machine Learning Seminar, the Max Planck Institute for Mathematics in the Sciences and UCLA, Applied Math Colloquium at UCLA, 2022"
+    type: "Invited talk"
+
+  - title: "Transformer with a Mixture of Gaussian Keys"
+    venue: "Geometry of Machine Learning, the 4th Annual Meeting of the SIAM Texas-Louisiana Section, 2021"
+    type: "Invited talk"
+
+  - title: "Momentum-Based and Fast Multipole Methods for Designing Deep Learning Models"
+    venue: "Mathematical Foundation of Deep Learning with the Applications to PDE, the 4th Annual Meeting of the SIAM Texas-Louisiana Section, 2021"
+    type: "Invited talk"
+
+  - title: "Brain-inspired Robust Vision Using Convolutional Neural Networks with Feedback"
+    venue: "NeurIPS NeuroAI Workshop, 2019"
+    type: "Poster"
+
+  - title: "Conditional Continuous Normalizing Flows for Physics-Inspired Learning"
+    venue: "NVIDIA Onsite Research Event, 2019"
+    type: "Lightning Talk"
+
+  - title: "Neural Rendering Model: Rethinking Neural Networks from the Joint Generation and Prediction Perspective"
+    venue: "NeurIPS Workshop on Integration of Deep Learning Theories, 2018"
+    type: "Contributed talk"
+
+  - title: "EnergyNet: Energy-Efficient Dynamic Inference"
+    venue: "NeurIPS Workshop on Compact Deep Neural Network Representation with Industrial Applications, 2018"
+    type: "Poster"
+
+  - title: "Tremor Generative Adversarial Network (TremorGAN): Deep Generative Model Approach for Geophysical Signal Generation"
+    venue: "NeurIPS Workshop on Machine Learning for Geophysical and Geochemical Signals, 2018"
+    type: "Poster"
+
+  - title: "The Latent-Dependent Deep Rendering Model"
+    venue: "ICML Workshop on Theoretical Foundations and Applications of Deep Generative Models, 2018"
+    type: "Poster"
+
+  - title: "Mixed Reality Generative Adversarial Networks: Closing the Visual Gap between Synthetic and Real Images"
+    venue: "Amazon Graduate Research Symposium, 2017"
+    type: "Poster"
+
+  - title: "A Probabilistic Framework for Deep Learning"
+    venue: "Computational and System Neuroscience Conference (COSYNE), 2016"
+    type: "Poster"

@@ -27,8 +27,13 @@ const byYear = publications.reduce(
 const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
 
 function highlightAuthors(authors: string): string {
-  return authors.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  let res = authors.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  res = res.replace(/ \*\*/g, '<span class="text-red-500 font-bold">**</span>');
+  res = res.replace(/ \*/g, '<span class="text-red-500 font-bold">*</span>');
+  return res;
 }
+
+const resolvePath = (p: string) => p.startsWith('/') ? import.meta.env.BASE_URL.replace(/\/$/, '') + p : p;
 ---
 <div class="space-y-10">
   {years.map(year => (
@@ -46,7 +51,7 @@ function highlightAuthors(authors: string): string {
                   &ldquo;{pub.title}&rdquo;
                 </a>
               : pub.links?.pdf
-              ? <a href={pub.links.pdf}
+              ? <a href={resolvePath(pub.links.pdf)}
                    class="font-semibold text-primary hover:text-accent hover:underline underline-offset-2">
                   &ldquo;{pub.title}&rdquo;
                 </a>
@@ -56,7 +61,7 @@ function highlightAuthors(authors: string): string {
             {pub.note && <strong class="text-red-500"> {pub.note}</strong>}.
             {pub.links && (
               <span class="ml-1 inline-flex gap-2 text-sm">
-                {pub.links.pdf     && <a href={pub.links.pdf}     class="text-primary hover:text-accent hover:underline font-semibold">[PDF]</a>}
+                {pub.links.pdf     && <a href={resolvePath(pub.links.pdf)}     class="text-primary hover:text-accent hover:underline font-semibold">[PDF]</a>}
                 {pub.links.arxiv   && <a href={pub.links.arxiv}   target="_blank" rel="noopener" class="text-primary hover:text-accent hover:underline font-semibold">[arXiv]</a>}
                 {pub.links.code    && <a href={pub.links.code}    target="_blank" rel="noopener" class="text-primary hover:text-accent hover:underline font-semibold">[code]</a>}
                 {pub.links.project && <a href={pub.links.project} class="text-primary hover:text-accent hover:underline font-semibold">[project]</a>}

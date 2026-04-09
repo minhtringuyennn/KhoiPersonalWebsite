@@ -29,6 +29,15 @@ const lastName  = words[words.length - 1];
 const hasPrefix = (profile.name as string).startsWith('Dr.');
 
 const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: string) => p.trim());
+
+// Group publications by category, then by year within each category
+const categories = ['Journal', 'Conference', 'Application'] as const;
+const pubsByCategory: Record<string, any[]> = {};
+for (const cat of categories) {
+  pubsByCategory[cat] = publications.filter((p: any) => p.category === cat || (cat === 'Application' && p.category === 'Application'));
+}
+
+const resolvePath = (p: string) => p.startsWith('/') ? import.meta.env.BASE_URL.replace(/\/$/, '') + p : p;
 ---
 <Layout
   title={`${profile.name} | ${profile.title}`}
@@ -65,15 +74,22 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
             {contact.email}
           </a>
         )}
-        {contact.lab_url && (
-          <a href={contact.lab_url} target="_blank" rel="noopener"
+        {contact.github && (
+          <a href={contact.github} target="_blank" rel="noopener"
              class="flex items-center gap-2 hover:text-accent dark:hover:text-accent transition-colors font-medium">
-            <span class="i-ph-flask-bold w-4 h-4"></span>
-            Research Group
+            <span class="i-ph-github-logo-bold w-4 h-4"></span>
+            GitHub
+          </a>
+        )}
+        {contact.scholar && (
+          <a href={contact.scholar} target="_blank" rel="noopener"
+             class="flex items-center gap-2 hover:text-accent dark:hover:text-accent transition-colors font-medium">
+            <span class="i-ph-graduation-cap-bold w-4 h-4"></span>
+            Google Scholar
           </a>
         )}
         {profile.cv && (
-          <a href={profile.cv}
+          <a href={resolvePath(profile.cv)}
              class="flex items-center gap-2 hover:text-accent dark:hover:text-accent transition-colors font-medium">
             <span class="i-ph-file-text-bold w-4 h-4"></span>
             CV
@@ -111,32 +127,36 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
 
   {sections.publications !== false && (
   <Section id="publications" title="Publications">
-    <PubList publications={publications} />
-  </Section>
-  )}
-
-  {sections.research !== false && (
-  <Section id="research" title="Research">
-    <p class="text-lg text-gray-700 dark:text-slate-300 mb-6 leading-relaxed">
-      My research lies at the intersection of machine learning, computer vision, and robotics.
-      I focus on building systems that can perceive, reason, and act in the physical world.
+    <p class="text-sm text-gray-500 dark:text-slate-500 mb-8 italic">
+      <span class="text-red-500 font-bold">*</span> co-first authors &nbsp;|&nbsp; <span class="text-red-500 font-bold">**</span> co-last authors
     </p>
-    <ul class="space-y-4">
-      {[
-        ["3D Scene Understanding",   "Neural scene representations, NeRF, implicit surfaces"],
-        ["Robot Manipulation",        "Dexterous grasping, deformable object manipulation, sim-to-real"],
-        ["Embodied AI",               "Language-guided navigation, instruction following, world models"],
-        ["Generative Models",         "Diffusion models for robotic learning, data augmentation, planning"],
-      ].map(([title, desc]) => (
-        <li class="flex gap-4">
-          <span class="text-primary font-bold text-lg mt-0.5 flex-shrink-0">▶</span>
-          <span class="text-gray-700 dark:text-slate-300">
-            <strong class="text-gray-900 dark:text-slate-100 font-bold">{title}</strong>
-            {' — '}{desc}
-          </span>
-        </li>
-      ))}
-    </ul>
+
+    {pubsByCategory['Journal'].length > 0 && (
+      <div class="mb-10">
+        <h3 class="text-base font-bold text-gray-500 dark:text-slate-400 uppercase tracking-widest border-b border-gray-200 dark:border-slate-700 pb-2 mb-6">
+          Journal Publications
+        </h3>
+        <PubList publications={pubsByCategory['Journal']} />
+      </div>
+    )}
+
+    {pubsByCategory['Conference'].length > 0 && (
+      <div class="mb-10">
+        <h3 class="text-base font-bold text-gray-500 dark:text-slate-400 uppercase tracking-widest border-b border-gray-200 dark:border-slate-700 pb-2 mb-6">
+          Conference Publications
+        </h3>
+        <PubList publications={pubsByCategory['Conference']} />
+      </div>
+    )}
+
+    {pubsByCategory['Application'].length > 0 && (
+      <div class="mb-10">
+        <h3 class="text-base font-bold text-gray-500 dark:text-slate-400 uppercase tracking-widest border-b border-gray-200 dark:border-slate-700 pb-2 mb-6">
+          Papers on Application
+        </h3>
+        <PubList publications={pubsByCategory['Application']} />
+      </div>
+    )}
   </Section>
   )}
 
@@ -189,9 +209,11 @@ const bioParagraphs = (profile.bio as string).trim().split('\n\n').map((p: strin
     <ul class="space-y-3">
       {awards.map((item: any) => (
         <li class="flex flex-col sm:flex-row gap-1 sm:gap-8">
-          <span class="font-mono text-sm font-bold text-gray-400 dark:text-slate-500 sm:w-12 flex-shrink-0">
-            {item.year}
-          </span>
+          {item.year && (
+            <span class="font-mono text-sm font-bold text-gray-400 dark:text-slate-500 sm:w-12 flex-shrink-0">
+              {item.year}
+            </span>
+          )}
           <span class="text-gray-800 dark:text-slate-200">{item.description}</span>
         </li>
       ))}

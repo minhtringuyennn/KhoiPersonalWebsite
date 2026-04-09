@@ -13,7 +13,8 @@ const { profile, contact, sections: sectionVisibility = {} } = Astro.props;
 
 const photoPath = profile.photo?.startsWith('/') ? profile.photo.slice(1) : profile.photo;
 const photoExists = photoPath ? existsSync(join(process.cwd(), 'public', photoPath)) : false;
-const photoSrc = photoExists ? profile.photo : placeholderSvg(initials(profile.name), 128);
+const resolvePath = (p: string) => p.startsWith('/') ? import.meta.env.BASE_URL.replace(/\/$/, '') + p : p;
+const photoSrc = photoExists ? resolvePath(profile.photo) : placeholderSvg(initials(profile.name), 128);
 
 const allSections = [
   { id: "about",        label: "About",              icon: "i-ph-user-bold" },

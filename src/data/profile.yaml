@@ -1,17 +1,14 @@
-name: "Dr. Jane Smith"
-title: "Assistant Professor"
-affiliation: "School of Computer Science, Carnegie Mellon University"
-photo: "/profile.jpg"
+name: "Dr. Tan Minh Nguyen"
+title: "Assistant Professor (Presidential Young Professor)"
+affiliation: "Department of Mathematics, National University of Singapore"
+photo: "/tan_profile.jpeg"
 bio: |
-  I am an Assistant Professor in the School of Computer Science at Carnegie Mellon University.
-  My research focuses on machine learning, computer vision, and robotics. I completed my PhD
-  at Stanford University and was a postdoctoral researcher at MIT CSAIL before joining CMU.
+  I am currently an Assistant Professor of Mathematics (Presidential Young Professor) at the National University of Singapore (NUS). Before joining NUS, I was a postdoctoral scholar in the Department of Mathematics at the University of California, Los Angeles, working with [Dr. Stanley J. Osher](https://www.math.ucla.edu/~sjo/). I obtained my Ph.D. in Machine Learning from Rice University, where I was advised by [Dr. Richard G. Baraniuk](https://richb.rice.edu/). I gave an invited talk in the Deep Learning Theory Workshop at NeurIPS 2018 and organized the 1st Workshop on Integration of Deep Neural Models and Differential Equations at ICLR 2020. I also had two awesome long internships with Amazon AI and NVIDIA Research, during which I worked with [Dr. Anima Anandkumar](http://tensorlab.cms.caltech.edu/users/anima/). I am the recipient of the prestigious [Computing Innovation Postdoctoral Fellowship (CIFellows)](https://cra.org/ccc/leadership-development/cifellows/) from the Computing Research Association (CRA), the [NSF Graduate Research Fellowship](https://www.nsfgrfp.org/), and the [IGERT Neuroengineering Traineeship](http://www.igert.org/projects/301.html#:~:text=trainees%20are%E2%80%A6%20more%20%C2%BB-,This%20Integrative%20Graduate%20Education%20and%20Research%20Traineeship%20(IGERT)%20award%20provides,%2C%20mechanical%20engineering%2C%20and%20bioengineering.). I received my M.S. and B.S. in Electrical and Computer Engineering from Rice in May 2018 and May 2014, respectively.
 
-  I am broadly interested in developing intelligent systems that can perceive, reason, and
-  act in the physical world. My work combines deep learning with geometric reasoning and
-  physical simulation.
+  I am also writing about simple ideas and principled approaches that lead to working machine learning algorithms on my blog, [Almost Convergent](http://almostconvergent.blogs.rice.edu/).
 
-  I lead the Machine Learning & Robotics Lab at CMU. My research has been supported by
-  NSF, DARPA, Amazon, and Google. I am always looking for motivated PhD students and
-  postdoctoral researchers.
-cv: "/cv.pdf"
+  My research focuses on 3 important components of modern AI: Deep Models, Learning, and Adaptation (DeepLEAD). We leverage tools from machine learning, optimization, differential equations, statistics, and algebra to understand and advance these three components, aiming to achieve Robust, Interpretable, Scalable, and Efficient AI (RISE AI).
+cv: "/Tan_Nguyen_CV.pdf"
+github: "https://github.com/minhtannguyen/"
+scholar: "https://scholar.google.com/citations?user=OizOh88AAAAJ&hl=en"
+blog: "http://almostconvergent.blogs.rice.edu/"

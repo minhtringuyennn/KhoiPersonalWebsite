@@ -29,7 +29,8 @@ const { profile, contact } = Astro.props;
 
 const photoPath = profile.photo?.startsWith('/') ? profile.photo.slice(1) : profile.photo;
 const photoExists = photoPath ? existsSync(join(process.cwd(), 'public', photoPath)) : false;
-const photoSrc = photoExists ? profile.photo : placeholderSvg(initials(profile.name), 176);
+const resolvePath = (p: string) => p.startsWith('/') ? import.meta.env.BASE_URL.replace(/\/$/, '') + p : p;
+const photoSrc = photoExists ? resolvePath(profile.photo) : placeholderSvg(initials(profile.name), 176);
 ---
 <aside class="w-56 flex-shrink-0">
   <div class="sticky top-16 space-y-4">
@@ -50,7 +51,7 @@ const photoSrc = photoExists ? profile.photo : placeholderSvg(initials(profile.n
     {profile.cv && (
       <div class="text-center">
         <a
-          href={profile.cv}
+          href={resolvePath(profile.cv)}
           class="inline-block px-4 py-1.5 bg-primary text-white text-sm rounded hover:bg-accent transition-colors"
         >
           Download CV
